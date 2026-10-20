@@ -6,6 +6,8 @@ def move_file(command: str) -> None:
     if len(parts) != 3:
         return
     comm, file_name, file_way = parts
+    if file_way[-1] == "/":
+        file_way = file_way + file_name
     if comm != "mv":
         return
     way_parts = file_way.split("/")
